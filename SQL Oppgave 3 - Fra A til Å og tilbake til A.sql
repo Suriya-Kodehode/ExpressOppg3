@@ -137,7 +137,7 @@ begin
 		from t_Users
 		where lower(Username) = lower(@Identifier) or lower(Email) = lower(@Identifier);
 
-		if @Salt is null
+		if @Salt is null or @UserID is null
 		begin
 			set @ReturnCode = -1;
 			return;
